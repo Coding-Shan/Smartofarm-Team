@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="http://623795179518-38188244q80t9l43ajdg76qgsc5o3tsd.apps.googleusercontent.com/">
+    <title>SMARTOFARM login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="asset/style.css">
+    <style>
+        #mysingnin2{ margin: auto;}
+        .box {
+            align-items: center;
+            border: 1px solid #000;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .login-section {
+            border-right: 1px solid;
+        }
+    
+        .text-info {
+    color: #1f2324!important;
+}
+
+        body {
+            /* background-image: url('pic2.jpg'); */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: rgb(217, 238, 222);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="row box">
+                <div class="col-md-6 login-section">
+                    <h2 class="text-info text-center">Login</h2>
+                    <label for="">Username</label><br>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">@</span>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <label for="">Password</label>
+                    <div class="input-group flex-nowrap mb-2">
+                        <span class="input-group-text" id="addon-wrapping">*</span>
+                        <input type="text" class="form-control" placeholder="Password" aria-label="Password"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <!-- <button type="button" class="btn btn-primary">Login</button> -->
+                     <!-- <button class="btn">Sign in </button> -->
+        <a href="mainpage2.html"target="_blank" class="btn btn-primary">login</a>
+                </div>
+                <div class="col-md-6 ">
+                    <h2 class="text-info text-center">Register</h2>
+                    <label for="">Username</label><br>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">@</span>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <label for="">Password</label>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">*</span>
+                        <input type="text" class="form-control" placeholder="Password" aria-label="Password"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <label for="">Mobile No</label>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">*</span>
+                        <input type="number" class="form-control" placeholder="Mobile No" aria-label="Password"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <label for="">Email</label>
+                    <div class="input-group flex-nowrap mb-2">
+                        <span class="input-group-text" id="addon-wrapping">*</span>
+                        <input type="text" class="form-control" placeholder="Email" aria-label="Password"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <button type="button" class="btn btn-primary">Register</button>
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <div id="my-signin2"></div>
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+        
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+  <!-- Add where you want your sign-in button to render -->
+</script>
+</div>
+</div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>SmartoFarm</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans:600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+
+
+        .main {
+            margin-left: 200px;
+            /* padding: 5px; */
+            padding: 0 50px 0 20px;
+            margin: 30px 50px 0px 300px;
+            color: rgb(0, 0, 0);
+
+        }
+
+        .main h2 {
+            margin-top: 30px;
+            font-size: 35;
+            color:#037c50;
+            text-decoration: underline;
+        }
+
+        .main h3 {
+            margin: 10px 300px 5px 0px;
+        }
+        .main p{
+    font-size: 23px;
+}
+        body {
+            background-image: url(pic67.jpg) ;
+            background-size: cover;
+            /* background-color: rgb(207, 238, 214); */
+            
+        }
+
+
+        .sidebar {
+            position: fixed;
+            width: 240px;
+            left: -240px;
+            height: 100%;
+            background: #e7e9eb;
+            ;
+            transition: all .5s ease;
+        }
+
+        .sidebar header {
+            font-size: 28px;
+            color: rgb(255, 255, 255);
+            line-height: 70px;
+            text-align: center;
+            background: #04AA6D;
+            user-select: none;
+            font-family: 'Montserrat', sans-serif;
+            border-bottom:  1px #000000;
+        }
+
+        .sidebar a {
+            display: block;
+            height: 65px;
+            width: 100%;
+            color: rgb(15, 15, 15);
+            line-height: 65px;
+            padding-left: 30px;
+            box-sizing: border-box;
+            border-bottom: 1px solid black;
+            border-top: 1px solid rgba(255, 255, 255, 0.137);
+            border-left: 5px solid transparent;
+            font-family: 'Open Sans', sans-serif;
+            transition: all .5s ease;
+        }
+
+        a.active,
+        a:hover {
+            border-left: 5px solid #04AA6D;
+            color: #04AA6D;
+        }
+
+        .sidebar a i {
+            font-size: 23px;
+            margin-right: 16px;
+        }
+
+        .sidebar a span {
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        #check {
+            display: none;
+        }
+
+        label #btn,
+        label #cancel {
+            position: absolute;
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            border: 1px solid#030303;
+            margin: 15px 30px;
+            font-size: 29px;
+            background: rgba(235, 235, 235, 0.329);
+
+
+            height: 45px;
+            width: 45px;
+            text-align: center;
+            line-height: 45px;
+            transition: all .5s ease;
+        }
+
+        label #cancel {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #check:checked~.sidebar {
+            left: 0;
+        }
+
+        #check:checked~label #btn {
+            margin-left: 245px;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #check:checked~label #cancel {
+            margin-left: 245px;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media(max-width : 860px) {
+            .sidebar {
+                height: auto;
+                width: 70px;
+                left: 0;
+                margin: 100px 0;
+            }
+
+            header,
+            #btn,
+            #cancel {
+                display: none;
+            }
+
+            span {
+                position: absolute;
+                margin-left: 23px;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .sidebar a {
+                height: 60px;
+            }
+
+            .sidebar a i {
+                margin-left: -10px;
+            }
+
+            a:hover {
+                width: 200px;
+                background: inherit;
+            }
+
+            .sidebar a:hover span {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        p{color: #000000;}
+        h1{
+    text-align: center;
+    background-color:  #04AA6D;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header>SmartoFarm</header>
+        <a href="#" class="active">
+            <i class="fas fa-qrcode"></i>
+            <span>FARM ORGANIC</span>
+        </a>
+        <a href="soilmang.html">
+            <i class="far fa-envelope"></i>
+            <span>SOIL Management</span>
+        </a>
+        <a href="farmbuild.html">
+            <i class="fas fa-calendar"></i>
+            <span>Farm Building</span>
+        </a>
+        <a href="waterm.html">
+            <i class="far fa-question-circle"></i>
+            <span>Irrigation</span>
+        </a>
+        <a href="organicmanure.html">
+            <i class="fas fa-link"></i>
+            <span>O manure</span>
+        </a>
+        <a href="pesticides.html">
+            <i class="fas fa-stream"></i>
+            <span>Plant diseases</span>
+        </a>
+        <a href="marketin.html">
+            <i class="fas fa-qrcode"></i>
+            <span>Marketing </span>
+            <a href="labouri.html">
+                <i class="far fa-envelope"></i>
+                <span>Labour Services</span>
+            </a>
+        </a>
+        </div>
+    <div class="main">
+        <h1>FARM ORGANIC</h1>
+        <h2> Organic Farming in India</h2>
+        <p class="text">Organic farming in India is an agricultural process, uses pest control derived from organic manure and animal
+            or plant waste. This farming started to respond to the environmental suffering caused by chemical pesticides
+            and synthetic fertilizers. It is a new system of agriculture that repairs, maintains, and improves the
+            ecological balance. Organic farming uses organic inputs, green manures, cow dung, etc. </p>
+
+        <h2>Principles of Organic Farming in India</h2>
+        <p>Organic agriculture grows and develops with these principles. These can contribute to improving organic
+            agriculture for the world.
+
+            There are four principles of organic farming are as follow:-
+
+        <h3>Principles of Health</h3>
+        <p> a] The health of the ecosystem, people, and communities.
+            The Principles of Ecology </p>
+        <p> b] The right balance between ecosystem and environment or nature.
+            Principles of Fairness </p>
+        <p> c] Good human relationships and quality of life.
+            Principles of Care </p>
+        <p> d] The considerations about the environment and environment of the future. </p>
+
+        <h2>Types of Organic Farming</h2>
+        <p>Organic farming are two types. Have a look down below on the type of organic farming </p>
+
+        <p>(a) Pure organic farming – In pure organic farming, there is avoiding every unnatural chemical. In the
+            process of pure farming, fertilizer and pesticides obtain from natural sources. It is called a pure form of
+            organic farming. Pure organic farming is the best for high.</p>
+
+        <p>(b) Integrated organic farming – Integrated organic farming consists of integrated nutrients management and
+            integrated pest management.</p>
+
+    </div>
+</body>
+
+</html>

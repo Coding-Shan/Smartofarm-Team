@@ -1,0 +1,24 @@
+p{
+
+    color: rgb(233, 233, 233);
+    /* background-color:  brown; */
+}
+.topnav{
+
+    color: darkgreen;
+    
+    font-style: oblique;
+    font-weight: bold;
+    
+}
+.line{
+
+border-bottom: 2px solid tomato;
+    display: block;
+    padding-bottom: 10px;
+}
+a{
+
+padding-right: 20px;
+
+}

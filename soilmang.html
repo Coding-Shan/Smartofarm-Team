@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="">
+</head>
+<style>
+    #navbar {
+        display: flex;
+        border: 2px solid rgb(192, 255, 220);
+        border-radius: 20px;
+        height: 180px;
+        background-color: #48b15f;
+        background: linear-gradient(#48b15f, #ecfafc);
+    }
+
+    #navbar ul {
+        display: flex;
+    }
+
+    #logo {
+        margin: 10px 34px;
+    }
+
+    #logo img {
+        height: 68px;
+        margin: -39px 5px;
+        border-radius: 20px;
+    }
+
+    #navbar ul {
+        display: flex;
+        font-family: 'Roboto Slab', serif;
+    }
+
+    #navbar :active {
+        text-decoration: underline;
+    }
+
+    #navbar::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0.6;
+    }
+
+    #navbar ul li {
+        list-style: none;
+        font-size: 1rem;
+    }
+
+    #navbar ul li a {
+        color: rgb(5, 5, 5);
+        display: block;
+        padding: 9px 45px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #navbar ul li a:hover {
+        color: rgb(43, 2, 2);
+    }
+
+    .logo-text {
+        color: #4c7934;
+        font-size: 36px;
+        margin: 70px 20px;
+    }
+
+    .entry-header h1 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        color: #000;
+        margin: 60px;
+        max-width: 720px;
+    }
+
+    .entry-header.pg-gutter {
+        background: white;
+        height: 117px;
+        padding-top: 1px;
+        padding-bottom: 13px;
+        width: 100vw;
+        margin-left: calc(((100vw - 100%)/2)*-1);
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 18px 0 rgb(0 0 0 / 10%);
+    }
+
+    .content p {
+        font-size: 1.2em;
+        line-height: 1.44em;
+        margin: 0.75em 0;
+        margin-bottom: 1.5em;
+        overflow-wrap: break-word;
+        box-sizing: inherit;
+        width: 1160px;
+        padding: 8px 211px;
+        color: black;
+    }
+
+    div {
+        display: block;
+    }
+
+    h3 {
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        font-size: 20px;
+        color: black;
+        font-family: sans-serif;
+    }
+
+    h3 a:hover {
+        background: skyblue;
+    }
+
+    .entry-content:after,
+    .comment-content:after,
+    .site-header:after,
+    .site-content:after,
+    .site-footer:after {
+        clear: both;
+    }
+
+    .clear:before,
+    .clear:after,
+    .entry-content:before,
+    .entry-content:after,
+    .comment-content:before,
+    .comment-content:after,
+    .site-header:before,
+    .site-header:after,
+    .site-content:before,
+    .site-content:after,
+    .site-footer:before,
+    .site-footer:after {
+        content: "";
+        display: table;
+        table-layout: fixed;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    .entry-content,
+    .entry-summary {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+        font-size: 20px;
+    }
+
+    .search-results .results article.has-post-thumbnail {
+        min-height: 180px;
+    }
+
+    .search-results .results article {
+        padding: 21px;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    #article {
+        display: block;
+        text-decoration: none;
+    }
+
+    #post-96298 {
+        padding: 22px;
+    }
+
+    #article {
+        padding: 22px;
+        text-decoration: none;
+    }
+
+    #endingpart {
+        background: green;
+        height: 130px;
+        margin: -53px 9px 16px;
+        border: 2px solid yellow;
+        border-radius: 30px;
+        background: url(/images/graSS.jpg);
+        font-family: sans-serif;
+        text-align: center;
+        font-size: larger;
+    }
+
+    .ending {
+        color: white;
+        text-align: center;
+    }
+
+    #post-93045 {
+        background: #ececec;
+        padding: 9px;
+        height: 247px;
+        margin: 18px -13px;
+        text-align: center;
+    }
+
+    #post-91464 {
+        background: #ececec;
+        padding: 9px;
+        height: 247px;
+        margin: 18px -13px;
+        text-align: center;
+    }
+
+    #post-88381 {
+        background: #ececec;
+        padding: 9px;
+        border: 2px pink;
+        height: 247px;
+        margin: 18px -13px;
+        text-align: center;
+    }
+
+    #post-88007 {
+        background: #ececec;
+        padding: 9px;
+        border: 2px pink;
+        height: 247px;
+        margin: 18px -13px;
+        text-align: center;
+    }
+
+    #post-87916 {
+        background: #ececec;
+        padding: 9px;
+        border: 2px pink;
+        height: 247px;
+        margin: 18px -13px;
+        text-align: center;
+    }
+
+    #post-74098 {
+        background: #ececec;
+        padding: 9px;
+        border: 2px pink;
+        height: 247px;
+        margin: 18px -13px;
+        text-align: center;
+    }
+
+    #post-74100 {
+        background: #e6e6e6;
+        padding: 9px;
+        border: 2px pink;
+        height: 247px;
+        margin: 18px -13px;
+        text-align: center;
+    }
+
+    #post-74488 {
+        background: #ececec;
+        padding: 9px;
+        border: 2px pink;
+        height: 247px;
+        margin: 18px -13px;
+        text-align: center;
+    }
+
+    #post-74452 {
+        background: #ececec;
+        padding: 9px;
+        border: 2px pink;
+        height: 247px;
+        margin: 18px -13px;
+        text-align: center;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 18px 0 rgb(0 0 0 / 10%);
+    }
+
+    #post-74446 {
+        background: #ececec;
+        padding: 9px;
+        border: 2px pink;
+        height: 256px;
+        margin: 18px -13px;
+        text-align: center;
+    }
+
+    #post-74447 {
+        background: #ececec;
+        padding: 9px;
+        border: 2px pink;
+        height: 247px;
+        margin: 18px -13px;
+        text-align: center;
+    }
+
+    #post-74094 {
+        background: #ececec;
+        padding: 9px;
+        border: 2px pink;
+        height: 247px;
+        margin: 18px -13px;
+        text-align: center;
+    }
+
+    #post-74404 {
+        background: #ececec;
+        padding: 9px;
+        border: 2px pink;
+        height: 247px;
+        margin: 18px -13px;
+        text-align: center;
+    }
+
+    .dropbtn {
+        background-color: #04AA6D;
+        color: black;
+        padding: 26px 22px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+    .dropbtn:hover,
+    .dropbtn:focus {
+        background-color: #2980B9;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown a:hover {
+        background-color: #ddd;
+    }
+
+    .show {
+        display: block;
+    }
+</style>
+
+<body>
+    <nav id="navbar">
+        <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+        <lord-icon src="https://cdn.lordicon.com/bccqzuyr.json" trigger="loop"
+            colors="primary:#121331,secondary:#66ee78" axis-x="35" axis-y="40" style="width:250px;height:180px">
+        </lord-icon>
+        <p class="logo-text"> <span class="region"></span> Soil Management <br> </p> </a>
+        <ul>
+            <li class="item"><a href="SMARTOFARM.html">Home</a></li>
+            <!-- <li class="item"><a href="ph.html" target="_blank">pH test</a></li> -->
+            <!-- <li><a href="">About</a></li> -->
+        </ul>
+
+        <body>
+            <div class="dropdown"> <button onclick="myFunction()" class="dropbtn">Topics</button>
+                <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                <div id="myDropdown" class="dropdown-content"><a
+                    href="ph.html">pH test</a>  <a
+                        href="https://www.sare.org/resources/what-is-soil-health/">Soil health</a>
+                    <a
+                        href="https://www.sare.org/news/updated-building-soils-for-better-crops-focuses-on-soil-health-fundamentals/">Soil
+                        Building</a> <a
+                        href="https://www.sare.org/resources/soil-health-principles-and-practices-videos/">Soil Health
+                        Tips</a> <a href="https://www.agriwebb.com/blog/how-to-improve-soil-health/">Imroving Soil
+                        Health</a> <a href="https://www.sare.org/resources/smart-water-use-on-your-farm-or-ranch/">Smart
+                        Water Use</a> <a
+                        href="https://www.sare.org/resources/a-whole-farm-approach-to-managing-pests/">Pests
+                        Management</a> <a
+                        href="https://www.sare.org/resources/10-ways-cover-crops-enhance-soil-health/">10 ways to
+                        enhance soil health</a> <a href="https://www.youtube.com/watch?v=rU2nhcLbLak">Youtube videos</a></a>
+                </div>
+            </div>
+            <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+            <script> /* When the user clicks on the button, toggle between hiding and showing the dropdown content */ function myFunction() { document.getElementById("myDropdown").classList.toggle("show"); } // Close the dropdown if the user clicks outside of it window.onclick = function(event) { if (!event.target.matches('.dropbtn')) { var dropdowns = document.getElementsByClassName("dropdown-content"); var i; for (i = 0; i < dropdowns.length; i++) { var openDropdown = dropdowns[i]; if (openDropdown.classList.contains('show')) { openDropdown.classList.remove('show'); } } } } </script>
+    </nav>
+    <header class="entry-header pg-gutter">
+        <div class="pg-width">
+            <div class="breadcrumbs cf">
+                <div class="breadcrumbs-inner cf"><span><span><a href="/"
+                                title="Sustainable Agriculture Research and Education"></a>
+                            <h1 class="page-title"> <span>Soil Management</span></h1>
+                </div>
+                <div class="content"> <img src="/images/img_tree.png" alt="">
+                    <p>Soil management is the application of operations, practices, and treatments to protect soil and
+                        enhance its performance (such as soil fertility or soil mechanics). It includes soil
+                        conservation, soil amendment, and optimal soil health. In agriculture, some amount of soil
+                        management is needed both in nonorganic and organic types to prevent agricultural land from
+                        becoming poorly productive over decades. Organic farming in particular emphasizes optimal soil
+                        management, because it uses soil health as the exclusive or nearly exclusive source of its
+                        fertilization and pest control.</p>
+                    <p>Soil management encompasses a number of strategies used by farmers and ranchers to protect soil
+                        resources, one of their most valuable assets. By practicing soil conservation, including
+                        appropriate soil preparation methods, they reduce soil erosion and increase soil stabilization.
+                        These soil conservation methods allow for healthy soil formation, soil fertility and favorable
+                        soil composition, including soil permeability and soil porosity, which lead to increased soil
+                        health. Soil organic matter is a critical component of soil health. Cover crops can help
+                        maintain or increase soil organic matter. By using a variety of soil management practices, soil
+                        organic matter will increase while soil erosion will decrease, keeping soil nutrients on the
+                        farm. Farmers typically use a soil analysis, or soil sampling procedure, to determine what
+                        inputs are needed. Key practices include <a href="">composting</a> ,<a href=""> soil
+                            chemistry</a>, <a href="">nutrient mineralization</a>, <a href="">soil quality/health</a>,
+                        <b> organic matter <b>, green manures, soil analysis, soil microbiology, soil physics.</p>
+                </div>
+                <section id="article">
+                    <article id="post-74452" class="post-74452 has-post-thumbnail"> <a
+                            href="https://www.sare.org/resources/what-is-soil-health/"> <span class="img-wrap"><img
+                                    width="150" height="84"
+                                    src="https://www.sare.org/wp-content/uploads/soil-health-infographic-150x84.jpg"
+                                    data-lazy-type="image"
+                                    data-src="https://www.sare.org/wp-content/uploads/soil-health-infographic-150x84.jpg"
+                                    class="attachment-thumbnail size-thumbnail wp-post-image lazy-loaded"
+                                    alt="Screenshot of an animated farm landscape" loading="lazy"
+                                    srcset="https://www.sare.org/wp-content/uploads/soil-health-infographic-150x84.jpg 150w, https://www.sare.org/wp-content/uploads/soil-health-infographic-330x184.jpg 330w, https://www.sare.org/wp-content/uploads/soil-health-infographic-768x429.jpg 768w, https://www.sare.org/wp-content/uploads/soil-health-infographic.jpg 1081w"
+                                    data-srcset="" sizes="(max-width: 150px) 100vw, 150px"></span>
+                            <h3>What is Soil Health?<span class="icon-arrow-right"></span></h3>
+                        </a>
+                        <p>Soil health plays an essential role in raising healthy, productive crops and livestock. With
+                            this interactive infographic, learn how practices such as cover crops, no-till, crop
+                            rotation and the integration of livestock work in concert to improve soil health.</p>
+                    </article>
+                    <article id="post-93045" class="post-93045 has-post-thumbnail"> <a
+                            href="https://www.sare.org/resources/soil-health-principles-and-practices-videos/"> <span
+                                class="img-wrap"><img width="150" height="83"
+                                    src="https://www.sare.org/wp-content/uploads/soilhealthprincipalsvideo-150x83.png"
+                                    data-lazy-type="image"
+                                    data-src="https://www.sare.org/wp-content/uploads/soilhealthprincipalsvideo-150x83.png"
+                                    class="attachment-thumbnail size-thumbnail wp-post-image lazy-loaded"
+                                    alt="image for video series on soil health principals and practices" loading="lazy"
+                                    srcset="https://www.sare.org/wp-content/uploads/soilhealthprincipalsvideo-150x83.png 150w, https://www.sare.org/wp-content/uploads/soilhealthprincipalsvideo-330x183.png 330w, https://www.sare.org/wp-content/uploads/soilhealthprincipalsvideo-768x426.png 768w, https://www.sare.org/wp-content/uploads/soilhealthprincipalsvideo.png 992w"
+                                    data-srcset="" sizes="(max-width: 150px) 100vw, 150px"></span> <b>
+                                <h3>Soil Health Principles and Practices Videos<span class="icon-arrow-right"></span>
+                                </h3>
+                            </b> </a>
+                        <p>Provide information on managing and improving soil health. Farmers discuss practices such as
+                            cover cropping, and using mulch and compost to improve soil health.</p>
+                        <div>
+                    </article>
+                    <article id="post-91464" class="post-91464 has-post-thumbnail"> <a
+                            href="https://www.sare.org/news/updated-building-soils-for-better-crops-focuses-on-soil-health-fundamentals/">
+                            <span class="img-wrap"><img width="129" height="150"
+                                    src="https://www.sare.org/wp-content/uploads/Building-Soils-for-Better-Crops-4-cover-129x150.jpg"
+                                    data-lazy-type="image"
+                                    data-src="https://www.sare.org/wp-content/uploads/Building-Soils-for-Better-Crops-4-cover-129x150.jpg"
+                                    class="attachment-thumbnail size-thumbnail wp-post-image lazy-loaded"
+                                    alt="Building Soils for Better Crops Cover" loading="lazy" srcset="https://www.sare.org/wp-content/uploads/Building-Soils-for-Better-Crops-4-cover-129x150.jpg 129w, https://www.sare.org/wp-content/uploads/Building-Soils-for-Better-Crops-4-cover-284x330.jpg 284w,
+https://www.sare.org/wp-content/uploads/Building-Soils-for-Better-Crops-4-cover.jpg 558w" data-srcset=""
+                                    sizes="(max-width: 129px) 100vw, 129px"></span>
+                            <h3>Updated Building Soils for Better Crops Focuses on Soil Health Fundamentals<span
+                                    class="icon-arrow-right"></span></h3>
+                        </a>
+                        <p> Provides rich detail on ecologically sound practices for developing and maintaining healthy
+                            soils. It is a must-read for farmers, educators and students alike.</p>
+                    </article>
+            </div>
+            <article id="post-88381" class="post-88381 has-post-thumbnail"> <a
+                    href="https://www.sare.org/resources/building-soils-for-better-crops/"> <span class="img-wrap"><img
+                            width="129" height="150"
+                            src="https://www.sare.org/wp-content/uploads/Building-Soils-for-Better-Crops-4-cover-129x150.jpg"
+                            data-lazy-type="image"
+                            data-src="https://www.sare.org/wp-content/uploads/Building-Soils-for-Better-Crops-4-cover-129x150.jpg"
+                            class="attachment-thumbnail size-thumbnail wp-post-image lazy-loaded"
+                            alt="Building Soils for Better Crops Cover" loading="lazy"
+                            srcset="https://www.sare.org/wp-content/uploads/Building-Soils-for-Better-Crops-4-cover-129x150.jpg 129w, https://www.sare.org/wp-content/uploads/Building-Soils-for-Better-Crops-4-cover-284x330.jpg 284w, https://www.sare.org/wp-content/uploads/Building-Soils-for-Better-Crops-4-cover.jpg 558w"
+                            data-srcset="" sizes="(max-width: 129px) 100vw, 129px"></span>
+                    <h3>Building Soils for Better Crops<span class="icon-arrow-right"></span></h3>
+                </a>
+                <p>The fourth edition of <em>Building Soils for Better Crops</em>—enhanced and expanded—explains how to
+                    use ecological principles to build soil health and boost fertility, yields and overall
+                    sustainability.</p>
+            </article>
+            <article id="post-74098" class="post-74098 has-post-thumbnail"> <a
+                    href="https://www.sare.org/resources/smart-water-use-on-your-farm-or-ranch/"> <span
+                        class="img-wrap"><img width="116" height="150"
+                            src="https://www.sare.org/wp-content/uploads/Smart-Water-Use-116x150.jpg"
+                            data-lazy-type="image"
+                            data-src="https://www.sare.org/wp-content/uploads/Smart-Water-Use-116x150.jpg"
+                            class="attachment-thumbnail size-thumbnail wp-post-image lazy-loaded"
+                            alt="Cover page of Smart Water Use bulletin" loading="lazy" srcset="https://www.sare.org/wp-content/uploads/Smart-Water-Use-116x150.jpg 116w, https://www.sare.org/wp-content/uploads/Smart-Water-Use-255x330.jpg 255w, https://www.sare.org/wp-
+content/uploads/Smart-Water-Use.jpg 338w" data-srcset="" sizes="(max-width: 116px) 100vw, 116px"></span>
+                    <h3>Smart Water Use on Your Farm or Ranch<span class="icon-arrow-right"></span></h3>
+                </a>
+                <p>As producers throughout the nation grow increasingly concerned about water scarcity, farmers,
+                    ranchers and agricultural educators are beginning to explore new, conservation-oriented approaches
+                    to water use.</p>
+            </article>
+            <article id="post-74100" class="post-74100 has-post-thumbnail"> <a
+                    href="https://www.sare.org/resources/a-whole-farm-approach-to-managing-pests/"> <span
+                        class="img-wrap"><img width="116" height="150"
+                            src="https://www.sare.org/wp-content/uploads/A-Whole-Farm-Approach-to-Managing-Pests_cover-116x150.jpg"
+                            data-lazy-type="image"
+                            data-src="https://www.sare.org/wp-content/uploads/A-Whole-Farm-Approach-to-Managing-Pests_cover-116x150.jpg"
+                            class="attachment-thumbnail size-thumbnail wp-post-image lazy-loaded"
+                            alt="Image of the cover of A Whole Farm Approach to Managing Pests" loading="lazy"
+                            srcset="https://www.sare.org/wp-content/uploads/A-Whole-Farm-Approach-to-Managing-Pests_cover-116x150.jpg 116w, https://www.sare.org/wp-content/uploads/A-Whole-Farm-Approach-to-Managing-Pests_cover-255x330.jpg 255w, https://www.sare.org/wp-content/uploads/A-Whole-Farm-Approach-to-Managing-Pests_cover.jpg 612w"
+                            data-srcset="" sizes="(max-width: 116px) 100vw, 116px"></span>
+                    <h3>A Whole Farm Approach to Managing Pests<span class="icon-arrow-right"></span></h3>
+                </a>
+                <p>This 16-page bulletin helps producers—and the educators who work with them—use ecological principles
+                    across the entire farm to control pests.</p>
+            </article>
+            <article id="post-74446" class="post-74446 has-post-thumbnail"> <a
+                    href="https://www.sare.org/resources/10-ways-cover-crops-enhance-soil-health/"> <span
+                        class="img-wrap"><img width="119" height="150"
+                            src="https://www.sare.org/wp-content/uploads/10-ways-cover-crops-enhance-soil-health-119x150.jpg"
+                            data-lazy-type="image"
+                            data-src="https://www.sare.org/wp-content/uploads/10-ways-cover-crops-enhance-soil-health-119x150.jpg"
+                            class="attachment-thumbnail size-thumbnail wp-post-image lazy-loaded"
+                            alt="article on ten ways cover crops enhance soil health" loading="lazy" srcset="https://www.sare.org/wp-content/uploads/10-ways-cover-crops-enhance-soil-health-119x150.jpg 119w, https://www.sare.org/wp-content/uploads/10-ways-cover-crops-enhance-soil-health-262x330.jpg 262w,
+https://www.sare.org/wp-content/uploads/10-ways-cover-crops-enhance-soil-health.jpg 590w" data-srcset=""
+                            sizes="(max-width: 119px) 100vw, 119px"></span>
+                    <h3>10 Ways Cover Crops Enhance Soil Health<span class="icon-arrow-right"></span></h3>
+                </a>
+                <p>Soil health is a hot topic these&nbsp;days, one that is justifiably receiving&nbsp;considerable
+                    attention from farmers and&nbsp;their farm advisors. This short fact sheet highlights some of the
+                    key ways that cover crops improve soil health by influencing the biological and physical
+                    characteristics of the soil.</p>
+            </article>
+            <article id="post-74447" class="post-74447 has-post-thumbnail"> <a
+                    href="https://www.sare.org/resources/improving-soil-health-through-cover-crops/"> <span
+                        class="img-wrap"><img width="150" height="80"
+                            src="https://www.sare.org/wp-content/uploads/Northeast-screenshot-150x80.jpg"
+                            data-lazy-type="image"
+                            data-src="https://www.sare.org/wp-content/uploads/Northeast-screenshot-150x80.jpg"
+                            class="attachment-thumbnail size-thumbnail wp-post-image lazy-loaded"
+                            alt="Close up of two people kneeling with soil" loading="lazy"
+                            srcset="https://www.sare.org/wp-content/uploads/Northeast-screenshot-150x80.jpg 150w, https://www.sare.org/wp-content/uploads/Northeast-screenshot-330x175.jpg 330w, https://www.sare.org/wp-content/uploads/Northeast-screenshot-1200x638.jpg 1200w, https://www.sare.org/wp-content/uploads/Northeast-screenshot-768x408.jpg 768w, https://www.sare.org/wp-content/uploads/Northeast-screenshot.jpg 1280w"
+                            data-srcset="" sizes="(max-width: 150px) 100vw, 150px"></span>
+                    <h3>Improving Soil Health Through Cover Crops<span class="icon-arrow-right"></span></h3>
+                </a>
+                <p>Farmers around the country are discovering the power of cover crops to curb erosion and improve soil
+                    health. This video is from Pennsylvania, where a Penn State researcher and a grain farmer are
+                    partnering to spread the word.</p>
+            </article>
+            </section>
+            <section class="ending" id="endingpart">
+                <h1>Sign up for latest news <div>And updates from SMARTOFARM</div>
+                </h1>
+            </section>
+        </div>
+</body>
+
+</html>
